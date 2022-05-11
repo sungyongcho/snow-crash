@@ -3,7 +3,7 @@
 - Once logged in, there are couple files in the home dir.
 
 ```
-???$ ssh level65@localhost -p 4242
+???$ ssh level06@localhost -p 4242
 	   _____                      _____               _
 	  / ____|                    / ____|             | |
 	 | (___  _ __   _____      _| |     _ __ __ _ ___| |__
