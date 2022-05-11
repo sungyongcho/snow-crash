@@ -2,7 +2,7 @@
 
 - Once logged in, you will see `level07` binary file
 ```
-???$ ssh level06@localhost -p 4242
+???$ ssh level07@localhost -p 4242
 	   _____                      _____               _
 	  / ____|                    / ____|             | |
 	 | (___  _ __   _____      _| |     _ __ __ _ ___| |__
