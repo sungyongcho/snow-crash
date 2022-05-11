@@ -1,6 +1,6 @@
 # Level 05
 
-- Once logged in,  `You have new mail.` message shows on the prompt
+- Once logged in, `You have new mail.` message shows on the prompt
 
 ```
 ???$ ssh level05@localhost -p 4242
