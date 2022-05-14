@@ -16,7 +16,7 @@ ssh level01@localhost -p 4242
   Good luck & Have fun
 
           localhost 10.110.0.2
-level01@localhost's password: x24ti5gi3x0ol2eh4esiuxias
+level01@localhost's password:
 level01@SnowCrash:~$
 ```
 
