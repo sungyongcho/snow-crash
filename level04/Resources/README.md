@@ -36,7 +36,6 @@ sub x {
 x(param("x"));
 ```
 
-### Check port `4747`
 Something is on port `4747`, so let's check out
 
 ```
@@ -46,8 +45,6 @@ Connection to localhost 4242 port [tcp/*] succeeded!
 - nc: netcat
 	- -z for just scan for listening daemons, without sending any data
 	- -v for give more verbose output
-
-### Solution
 
 Try passing command to check
 

@@ -38,7 +38,9 @@ system("/bin/echo level07 "level07
 +++ exited (status 0) +++
 level07@SnowCrash:~$
 ```
-We can see the file takes an ENV varible of logname, and executs `/bin/echo level07`
+We can see the file takes an env varible of logname, and executes `/bin/echo level07`
+
+**and where `getenv("LOGNAME")` is called, the value from execution is `level07`
 
 Let's check the permissions of the file.
 ```

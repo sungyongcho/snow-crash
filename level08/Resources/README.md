@@ -63,7 +63,7 @@ level08@SnowCrash:~$ ln -s /home/user/level08/token /tmp/passcode
 level08@SnowCrash:~$ ls -ls /tmp/passcode
 0 lrwxrwxrwx 1 level08 level08 24 May 11 04:57 /tmp/passcode -> /home/user/level08/token
 ```
-at least the permissions are set, and let's run
+at least the permissions are set, and let's try getflag
 
 ```
 level08@SnowCrash:~$ ./level08 /tmp/passcode

