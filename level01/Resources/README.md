@@ -54,6 +54,14 @@ passwd                       100% 2477     4.9MB/s   00:00
 brew install john
 ```
 
+### For Linux
+- I chose to use kali, so `john` is installed by default.
+
+On debian/ubuntu, the installation command would be:
+```
+sudo apt install john
+```
+
 - cracking the passcode with the command:
 ```
 john ./password
