@@ -73,7 +73,7 @@ printf("You don't have access to %s\n", "token"You don't have access to token
 +++ exited (status 31) +++
 level10@SnowCrash:~$
 ```
-here, the `access` function is called, to check the permission of the file.
+Here, the `access` function is called, to check the permission of the file.
 
 on manual of access `man 2 access`, the following is presented
 ```
@@ -126,6 +126,25 @@ and listen on the port `6969` for capturing any incoming data
 
 ```
 level10@SnowCrash:~$ nc -lk 6969 &
+[...]
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+woupa2yuojeeaaed06riuj63c
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+woupa2yuojeeaaed06riuj63c
+[...]
 ```
 with the flag achieved, let's try logging into `flag11`
 
